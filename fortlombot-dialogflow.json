@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "fortlombot-ingd",
+  "private_key_id": "308a60a18aa57bce67045897321d823d8c83223a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDY5eCLucZuklyG\nxzRICRdYMfuyUW+40+326zZ9IN2Wzd86rgqOQcWjFabOwLLXqkP/AHJNJuvgLpjw\npGNFEepyImn15jUkXL5abJgT1Z4vszXMcTdftth48HxD5aRcCtPkgHHYOsmwcEp/\nuNDK2aoxF9KEAQ/oaIZIHxNmvS3LT6kHaEwn+N3WZOAn64kGwg6jb00RlJSS7Vr9\n8OhgkaTRZWMbVbvKq9Mdjf0h1lHQVisaYBfcCpbMfe0O2lCfSnrwzhjniYm/AdQ7\neFRjvvY5yOzbAkDOycFghgJ16PL/hQjO5Oqw0PvSf1jUbzlvsfFsaDr7JBIXCLa1\nFvtO3w9LAgMBAAECggEAMbD0sT5GClYI0a34udovWXrWDcPfgyo2lf/MU32Alsii\nsFhoPbAu3c6bkTmPn544Bsds6GUW3B0A1/zpa00P98cPnJD5stN2ntPLQZwKqiX2\nGNkFVS3YSVjbN1j4v0eRxQNyUZYiWARZ5QoL97VHawjop2pw4Q91WDeaY8rKn428\nE+mdMV+WeiDnlZYCzwWzUCHl94gCWD88veiT+4QDipvPcT63SSFK1+sVVEFvJAds\nB9us3sR/ZH4qdhrhPVR5l6/ZNTMpCtudff2DxR9qG4Pn2ZyYJodUf0EklQb/sYoO\nktfBxPhBYgAdPHeYVQtTRaMoBiqOfxmXMfbvWnrbcQKBgQDtbjG68GPya47Q+70R\n59AnwK5CoOhLaR0Y/tNLTE6SA/eirYiSiSgcnqAaCoOe/6gI4pmONc5vSFeUdKEY\nvGzC+0A+2Ud481HaU8zZsmXUij8/jg6YUcyJSoMt0HT5+d4HNKS7k1NjmIrCTG0y\niEElo8B3AFQ5VzYAjGWZAwXH+wKBgQDp3JVslcMccQKmgGzCjOJlxq1ls9NXYykQ\nWjn2HRXl4+LnEnyHwlpXTz/pSqXsFlz9piNLms4Z6QsTOqjxOgXhsf5m31I3blod\nMELJZOIrJCb+JvtizVJIMmw82HlszyoLJNIJtjVseKP2UV1tizamRieJcOIP4N+W\ng0udUSOk8QKBgFNWGThvRfWB0SgDJBLT1dkOJVwXlFFbvK3YS5ujVfSkVdgQpt4g\nLCcXekSJqjc1ruondxRWSHYA41SlNyIyiM5LV/p3U0Hdzb4fKcjDeECIobiSCQdn\ntq39rFt5ToWrMUZAMQ3xoRRVJ2cZYj6ZWpx2hIiAYg+aT8cTgFmbmPzfAoGBAJTp\nm9BH0LSUlW52SkrbsPHDv/gJuKJlhuldupinzqDTKlGfKOK9dA8ybGzd1qdtWgs9\nti3XRjOjfCTjbl4kZ0hesbLJsy2OvBzn9S8OaSG1ZIrjQaGZQjKswNVBtpf9ljUA\nXipG9t+6NhWLm+U8BzF7bIOM+LXJqDXMJuLmnr7RAoGACqWbwde5kMNi9p9vojPv\n/R9p1+rUcTCM+QqapxZcaYkkRgsgKJ0Uka0MTZZTdtYWoOac3wGShwVfIG0oYP0F\nfl0bCDD0ALkLzUGL+gVe1pc5NtKyLNqAatTitNfku48YLY1A7nnvrH4zsHf55gba\nB11kmVv1n5/TsWYeWTjguPo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "fortlombotweb@fortlombot-ingd.iam.gserviceaccount.com",
+  "client_id": "109209008436801495733",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/fortlombotweb%40fortlombot-ingd.iam.gserviceaccount.com"
+}
