@@ -11,7 +11,7 @@ var isProduction = process.env.NODE_ENV === "production";
 
 var app = express();
 
-app.use(cors({ origin: "http://localhost:4200", credentials: true }));
+app.use(cors({ origin: "http://localhost:4200" || process.env.FRONTEND_URL, credentials: true }));
 
 app.use(require("morgan")("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
