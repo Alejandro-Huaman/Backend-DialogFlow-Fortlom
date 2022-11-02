@@ -1,6 +1,6 @@
 var express = require("express"),
 bodyParser = require("body-parser"),
-cors = require("cors"),
+//cors = require("cors"),
 session = require("express-session"),
 dialogflowIndex = require("./routes/api"),
 mainRoute = require("./routes"),
