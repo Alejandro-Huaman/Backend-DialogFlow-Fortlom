@@ -26,7 +26,7 @@ app.use(session({ secret: 'conduit', cookie: { maxAge: 60000 }, resave: false, s
 if(!isProduction){
   app.use(errorhandler());
 }
- 
+
 app.use("/", mainRoute,cors(corsOptions));
 app.use("/api", dialogflowIndex,cors(corsOptions),function(req, res, next){
   res.json({msg: 'This is CORS-enabled for a Single Route'})
