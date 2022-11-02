@@ -1,6 +1,6 @@
 var express = require("express"),
 bodyParser = require("body-parser"),
-//cors = require("cors"),
+cors = require("cors"),
 session = require("express-session"),
 dialogflowIndex = require("./routes/api"),
 mainRoute = require("./routes"),
@@ -12,25 +12,8 @@ var isProduction = process.env.NODE_ENV === "production";
 var app = express();
 
 
-//app.use(cors({ origin: "http://localhost:4200" || process.env.FRONTEND_URL, credentials: true }));
-
-//Cors Configuration - Start
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*")
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested, Content-Type, Accept Authorization"
-  )
-  if (req.method === "OPTIONS") {
-    res.header(
-      "Access-Control-Allow-Methods",
-      "POST, PUT, PATCH, GET, DELETE"
-    )
-    return res.status(200).json({})
-  }
-  next()
-})
-//Cors Configuration - End
+app.use(cors());
+app.options('*', cors());
 
 app.use(require("morgan")("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
