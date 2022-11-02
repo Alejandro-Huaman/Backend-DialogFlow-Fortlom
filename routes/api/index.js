@@ -9,10 +9,6 @@ router.get("/", function(req, res){
 
 // /api/requestText POST 
 router.post("/requestText", function(req, res){
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
-  res.setHeader('Access-Control-Allow-Credentials', true); // If needed
     (async() => {
         console.log(req.body);
         var result = await runIntent(req.body.projectId, req.body.requestText);
