@@ -5,13 +5,13 @@ session = require("express-session"),
 dialogflowIndex = require("./routes/api"),
 mainRoute = require("./routes"),
 errorhandler = require("errorhandler");
-
+corsOptions = { origin: 'http://localhost:4200'}
 
 var isProduction = process.env.NODE_ENV === "production";
 
 var app = express();
 
-app.use(cors())
+app.use(cors(corsOptions))
 
 app.use(require("morgan")("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -27,8 +27,10 @@ if(!isProduction){
   app.use(errorhandler());
 }
 
-app.use("/", mainRoute);
-app.use("/api", dialogflowIndex);
+app.use("/", mainRoute,cors(corsOptions));
+app.use("/api", dialogflowIndex,cors(corsOptions),function(req, res, next){
+  res.json({msg: 'This is CORS-enabled for a Single Route'})
+});
 
 app.use(function(err, req, res, next){ 
   res.status(err.status || 500);
