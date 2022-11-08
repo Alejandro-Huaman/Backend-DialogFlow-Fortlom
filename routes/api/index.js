@@ -6,7 +6,7 @@ var runIntent = require("./dialogflow").runIntent;
 router.get("/", function(req, res){
     res.send("Hello from backend!");
 });
-
+ 
 // /api/requestText POST 
 router.post("/requestText", function(req, res){
     (async() => {
