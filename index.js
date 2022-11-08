@@ -5,6 +5,7 @@ session = require("express-session"),
 dialogflowIndex = require("./routes/api"),
 mainRoute = require("./routes"),
 errorhandler = require("errorhandler");
+const PORT =  process.env.PORT || 3000
  
 var isProduction = process.env.NODE_ENV === "production";
 
@@ -49,7 +50,7 @@ app.use(function(err, req, res, next){
   }})
 });
 
-const PORT =  process.env.PORT || 3000
+
 app.listen(PORT, function(){
   console.log(`Listening on port: ${PORT}`);
 });
