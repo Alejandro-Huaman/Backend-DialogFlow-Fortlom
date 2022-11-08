@@ -7,10 +7,10 @@ mainRoute = require("./routes"),
 errorhandler = require("errorhandler");
 
 var allowCrossDomain = function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
   res.header("Access-Control-Allow-Credentials", true);
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+  res.header('Access-Control-Allow-Headers', 'Origin,Access-Control-Allow-Origin,Content-Type,Accept,Authorization,Origin,Accept,X-Requested-With,Access-Control-Request-Method,Access-Control-Request-Headers');
 
   // intercept OPTIONS method
   if ('OPTIONS' == req.method) {
@@ -25,13 +25,12 @@ var isProduction = process.env.NODE_ENV === "production";
 
 var app = express();
 
-app.use(cors())
 app.use(allowCrossDomain);
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", '*');
+  res.header("Access-Control-Allow-Origin", 'http://localhost:4200');
   res.header("Access-Control-Allow-Credentials", true);
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+  res.header("Access-Control-Allow-Headers", 'Origin,Access-Control-Allow-Origin,Content-Type,Accept,Authorization,Origin,Accept,X-Requested-With,Access-Control-Request-Method,Access-Control-Request-Headers');
   next();
 });
 
@@ -49,10 +48,8 @@ if(!isProduction){
   app.use(errorhandler());
 }
 
-app.use("/", mainRoute,cors());
-app.use("/api", dialogflowIndex,cors(),function(req, res, next){
-  res.json({msg: 'This is CORS-enabled for a Single Route'})
-});
+app.use("/", mainRoute);
+app.use("/api", dialogflowIndex);
 
 app.use(function(err, req, res, next){ 
   res.status(err.status || 500);
