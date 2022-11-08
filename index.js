@@ -11,7 +11,22 @@ var isProduction = process.env.NODE_ENV === "production";
 
 var app = express();
 
-app.use(cors())
+var allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin,Access-Control-Allow-Origin,Content-Type,Accept,Authorization,Origin,Accept,X-Requested-With,Access-Control-Request-Method,Access-Control-Request-Headers');
+
+  // intercept OPTIONS method
+  if ('OPTIONS' == req.method) {
+    res.send(200);
+  }
+  else {
+    next();
+  }
+};
+
+app.use(allowCrossDomain)
 
 app.use(require("morgan")("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
