@@ -11,19 +11,7 @@ var isProduction = process.env.NODE_ENV === "production";
 
 var app = express();
 
-const whitelist = ["http://localhost:4200"]
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error("Not allowed by CORS"))
-    }
-  },
-  credentials: true,
-}
-app.use(cors(corsOptions))
-
+app.use(cors())
 
 app.use(require("morgan")("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
