@@ -1,12 +1,12 @@
 var express = require("express"),
 bodyParser = require("body-parser"),
-const cors = require("cors"),
+cors = require("cors"),
 session = require("express-session"),
 dialogflowIndex = require("./routes/api"),
 mainRoute = require("./routes"),
 errorhandler = require("errorhandler");
 const PORT =  process.env.PORT || 3000
- 
+
 var isProduction = process.env.NODE_ENV === "production";
 
 var app = express();
