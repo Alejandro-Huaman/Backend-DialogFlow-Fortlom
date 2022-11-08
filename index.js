@@ -5,7 +5,6 @@ session = require("express-session"),
 dialogflowIndex = require("./routes/api"),
 mainRoute = require("./routes"),
 errorhandler = require("errorhandler");
-corsOptions = { origin: 'http://localhost:4200'}
 
 var allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -26,8 +25,15 @@ var isProduction = process.env.NODE_ENV === "production";
 
 var app = express();
 
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(allowCrossDomain);
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", '*');
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+  next();
+});
 
 app.use(require("morgan")("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -43,8 +49,8 @@ if(!isProduction){
   app.use(errorhandler());
 }
 
-app.use("/", mainRoute,cors(corsOptions));
-app.use("/api", dialogflowIndex,cors(corsOptions),function(req, res, next){
+app.use("/", mainRoute,cors());
+app.use("/api", dialogflowIndex,cors(),function(req, res, next){
   res.json({msg: 'This is CORS-enabled for a Single Route'})
 });
 
